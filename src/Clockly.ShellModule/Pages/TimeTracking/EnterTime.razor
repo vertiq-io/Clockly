@@ -1,6 +1,8 @@
 ﻿@page "/timetracker/record"
+@inherits FluxorComponent
 
 @using Fluxor;
+@using Fluxor.Blazor.Web.Components;
 @using Vertiq.Stores;
 
 @inject IState<MediatorState<AddTimeViewModel>> State

@@ -1,6 +1,7 @@
 @page "/timetracker"
 @using Fluxor.Blazor.Web.Components;
 @using Fluxor;
+@using Vertiq.Icons;
 @using Vertiq.Stores;
 @inject IState<MediatorState<TimeViewModel>> State
 @inherits FluxorComponent
@@ -16,9 +17,14 @@
     }
 </style>
 
+<VIf Value="State.Value.Data.TimeEntries.Count() > 0">
+    <EnterTime />
+</VIf>
+
 <VTable Class="fit-table">
     <VTHead>
         <VTR>
+            <VTH>Date</VTH>
             <VTH>From</VTH>
             <VTH>To</VTH>
             <VTH>Description</VTH>
@@ -29,7 +35,7 @@
         <VForEach Items="@State.Value.Data.TimeEntries">
             <EmptyTemplate>
                 <VTR>
-                    <VTD colspan="4">
+                    <VTD colspan="5">
                         No times were recorded so far.
 
                         Do you want to <VButton Color="VColor.Primary" Href="/timetracker/record">Record Time</VButton> now?
@@ -38,10 +44,15 @@
             </EmptyTemplate>
             <ChildContent>
                 <VTR>
+                    <VTD>@context.Date</VTD>
                     <VTD>@context.Start</VTD>
                     <VTD>@context.End</VTD>
                     <VTD Style="width: 100%!important">@context.Description</VTD>
-                    <VTD></VTD>
+                    <VTD>
+                        <VIconButton Icon="@MdiIcons.TrashCan"
+                                     Color="VColor.Error"
+                                     Dispatcher="() => new DeleteRequest(context.Id)">Delete</VIconButton>
+                    </VTD>
                 </VTR>
             </ChildContent>
         </VForEach>

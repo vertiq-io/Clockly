@@ -1,7 +1,5 @@
-﻿using static Clockly.Pages.TimeTracking.TimePage;
-using Vertiq.DB;
+﻿using Vertiq.DB;
 using Vertiq.Messaging;
-using static Clockly.Pages.TimeTracking.EnterTime.AddTimeViewModel;
 using Clockly.Models;
 using Fluxor;
 using Vertiq.Actions;
@@ -19,11 +17,7 @@ public partial class EnterTime
 
         public TimeOnly From { get; init; } = TimeOnly.FromDateTime(RoundDateTime(DateTime.Now));
         public TimeOnly? To { get; init; } = TimeOnly.FromDateTime(RoundDateTime(DateTime.Now.AddHours(1)));
-
-
     }
-
-
 
     public sealed record AddRequest(AddTimeViewModel ViewModel) : Request<AddTimeViewModel>
     {
