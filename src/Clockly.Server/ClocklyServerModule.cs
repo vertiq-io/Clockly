@@ -6,6 +6,7 @@ namespace Clockly;
 [DependsOn(typeof(VertiqSecurityModule))]
 [DependsOn(typeof(VertiqHttpTransportServerModule))]
 [DependsOn(typeof(VertiqNewtonsoftJsonSerializationModule))]
+[DependsOn(typeof(VertiqXpoSchemaUpdateModule))]
 public sealed record ClocklyServerModule : ModuleBase
 {
     

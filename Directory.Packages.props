@@ -10,8 +10,9 @@
   <ItemGroup>
     <PackageVersion Include="Vertiq.Core" Version="$(VertiqVersion)" />
     <PackageVersion Include="Vertiq.Components" Version="$(VertiqVersion)" />
-    <!-- <PackageVersion Include="Vertiq.DB.Xpo" Version="$(VertiqVersion)" />
-    <PackageVersion Include="Vertiq.Hosting.BlazorServer" Version="$(VertiqVersion)" />
+    <PackageVersion Include="Vertiq.DB.Xpo" Version="$(VertiqVersion)" />
+    <PackageVersion Include="Vertiq.Features.Xpo.Server" Version="$(VertiqVersion)" />
+    <!-- <PackageVersion Include="Vertiq.Hosting.BlazorServer" Version="$(VertiqVersion)" />
     <PackageVersion Include="Vertiq.Hosting.BlazorServerSecurity" Version="$(VertiqVersion)" />
     <PackageVersion Include="Vertiq.Modules.AppModule" Version="$(VertiqVersion)" />
     <PackageVersion Include="Vertiq.Features.Fluxor" Version="$(VertiqVersion)" />

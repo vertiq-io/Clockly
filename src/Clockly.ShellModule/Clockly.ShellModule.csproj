@@ -1,14 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Vertiq.Templates.MudBlazor" />
+    <None Include="Pages\TimeTracking\TimePage.razor" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" />
+    <PackageReference Include="Vertiq.Templates.MudBlazor" />
+    <PackageReference Include="Vertiq.DB.Xpo" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Vertiq" />
+    <Using Include="DevExpress.Xpo" />
   </ItemGroup>
 
 </Project>
