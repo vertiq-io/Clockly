@@ -12,6 +12,8 @@
     <PackageReference Include="Microsoft.Data.Sqlite" />
     <PackageReference Include="Vertiq.Templates.MudBlazor" />
     <PackageReference Include="Vertiq.DB.Xpo" />
+    <PackageReference Include="Vertiq.Features.Fluxor.Conventions" />
+    <PackageReference Include="Vertiq.IconPack.MaterialDesignIcons" />
   </ItemGroup>
 
   <ItemGroup>

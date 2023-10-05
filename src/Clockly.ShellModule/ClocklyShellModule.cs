@@ -2,9 +2,13 @@ using Clockly.Models;
 
 using DevExpress.Xpo.DB;
 
+using Vertiq.Icons;
+
 namespace Clockly;
 
 [DependsOn(typeof(VertiqMudBlazorTemplateModule))]
+[DependsOn(typeof(VertiqFluxorConventionsModule))]
+[DependsOn(typeof(VertiqMaterialDesignIconsIconPackModule))]
 public sealed record ClocklyShellModule : ModuleBase
 { 
     static ClocklyShellModule()
@@ -14,6 +18,7 @@ public sealed record ClocklyShellModule : ModuleBase
 
     public override void RegisterNavItems(NavItemCollection navItems) => navItems
         .Add(("Home", "/"))
+        .Add(("Tracker", "/timetracker", MdiIcons.ClockCheck))
     ;
 
     public override void ConfigureServices(IApplication application, IServiceCollection services)

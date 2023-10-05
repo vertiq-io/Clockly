@@ -15,15 +15,20 @@
     <!-- <PackageVersion Include="Vertiq.Hosting.BlazorServer" Version="$(VertiqVersion)" />
     <PackageVersion Include="Vertiq.Hosting.BlazorServerSecurity" Version="$(VertiqVersion)" />
     <PackageVersion Include="Vertiq.Modules.AppModule" Version="$(VertiqVersion)" />
-    <PackageVersion Include="Vertiq.Features.Fluxor" Version="$(VertiqVersion)" />
-    <PackageVersion Include="Vertiq.Features.Fluxor.Conventions" Version="$(VertiqVersion)" />-->
+    <PackageVersion Include="Vertiq.Features.Fluxor" Version="$(VertiqVersion)" />-->
 
     <!-- Hosting -->
     <PackageVersion Include="Vertiq.Hosting.BlazorServer" Version="$(VertiqVersion)" />
 
     <!-- Template -->
     <PackageVersion Include="Vertiq.Templates.MudBlazor" Version="$(VertiqVersion)" />
+    
+    <!-- Fluxor -->
+    <PackageVersion Include="Vertiq.Features.Fluxor.Conventions" Version="$(VertiqVersion)" />
 
+    <!-- Icons -->
+    <PackageVersion Include="Vertiq.IconPack.MaterialDesignIcons" Version="$(VertiqVersion)"/>
+    
     <!-- Security -->
     <PackageVersion Include="Vertiq.Hosting.BlazorServerSecurity" Version="$(VertiqVersion)" />
 

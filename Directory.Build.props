@@ -6,6 +6,7 @@
     <!-- <MinVerTagPrefix>v</MinVerTagPrefix> -->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
 
     <!-- Fix the Hot Reload issue -->
     <AssemblyVersion Condition="'$(Configuration)' == 'Debug'">1.0.0.0</AssemblyVersion>

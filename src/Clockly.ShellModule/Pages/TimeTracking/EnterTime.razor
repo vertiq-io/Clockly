@@ -1,0 +1,13 @@
+﻿@page "/timetracker/record"
+
+@using Fluxor;
+@using Vertiq.Stores;
+
+@inject IState<MediatorState<AddTimeViewModel>> State
+
+<VDetailView Model="@State.Value.Data" DispatcherOnSubmit="v => new AddRequest(v)">
+    <VEditor For="m => m.Description" />
+    <VEditor For="m => m.From" MinuteSelectionStep="@(15)" />
+    <VEditor For="m => m.To" MinuteSelectionStep="@(15)" />
+    <VSubmit />
+</VDetailView>

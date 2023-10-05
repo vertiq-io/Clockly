@@ -34,19 +34,19 @@ public class CTimeEntry : XPObject
         set => SetPropertyValue(nameof(Date), ref date, value);
     }
 
-    private TimeSpan? from;
+    private TimeOnly? from;
     [Persistent]
     [ValueConverter(typeof(TimeOnlyConverter))]
-    public TimeSpan? TimeFrom
+    public TimeOnly? TimeFrom
     {
         get => from;
         set => SetPropertyValue(nameof(TimeFrom), ref from, value);
     }
         
-    private TimeSpan? timeTo;
+    private TimeOnly? timeTo;
     [Persistent]
     [ValueConverter(typeof(TimeOnlyConverter))]
-    public TimeSpan? TimeTo
+    public TimeOnly? TimeTo
     {
         get => timeTo;
         set => SetPropertyValue(nameof(TimeTo), ref timeTo, value);

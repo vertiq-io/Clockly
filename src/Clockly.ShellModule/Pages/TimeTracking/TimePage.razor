@@ -1,5 +1,50 @@
+@page "/timetracker"
 @using Fluxor.Blazor.Web.Components;
 @using Fluxor;
-@* @inject IState<MediatorState<>> *@
-
+@using Vertiq.Stores;
+@inject IState<MediatorState<TimeViewModel>> State
 @inherits FluxorComponent
+
+<VDispatchOnce Dispatch="new FetchRequest(State.Value.Data)" />
+<style>
+    .fit-table table {
+        table-layout: auto !important;
+    }
+
+    .fit-table th, .fit-table td, .fit-table thead th, .fit-table tbody td, .fit-table tfoot td, .fit-table tfoot th {
+        width: auto !important;
+    }
+</style>
+
+<VTable Class="fit-table">
+    <VTHead>
+        <VTR>
+            <VTH>From</VTH>
+            <VTH>To</VTH>
+            <VTH>Description</VTH>
+            <VTH></VTH>
+        </VTR>
+    </VTHead>
+    <VTBody>
+        <VForEach Items="@State.Value.Data.TimeEntries">
+            <EmptyTemplate>
+                <VTR>
+                    <VTD colspan="4">
+                        No times were recorded so far.
+
+                        Do you want to <VButton Color="VColor.Primary" Href="/timetracker/record">Record Time</VButton> now?
+                    </VTD>
+                </VTR>
+            </EmptyTemplate>
+            <ChildContent>
+                <VTR>
+                    <VTD>@context.Start</VTD>
+                    <VTD>@context.End</VTD>
+                    <VTD Style="width: 100%!important">@context.Description</VTD>
+                    <VTD></VTD>
+                </VTR>
+            </ChildContent>
+        </VForEach>
+    </VTBody>
+</VTable>
+
