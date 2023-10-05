@@ -7,6 +7,9 @@
 
 @inject IState<MediatorState<AddTimeViewModel>> State
 
+@* HACK: We currently need to unmount and mount the DetailView caused by #40 *@
+@* Otherwise the new server state will not be bound correctly *@
+
 <VIf Value="@State.Value.IsLoading">
     <True>
         <DefaultLoader />
@@ -20,8 +23,3 @@
         </VDetailView>
     </False>
 </VIf>
-
-
-<VDiv>
-    @State.Value.Data.Description
-</VDiv>
