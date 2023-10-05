@@ -7,6 +7,7 @@ using Vertiq.DB;
 using Vertiq.Messaging;
 
 using static Clockly.Pages.TimeTracking.EnterTime;
+using static MudBlazor.CategoryTypes;
 
 namespace Clockly.Pages.TimeTracking;
 
@@ -21,10 +22,14 @@ public partial class TimePage
         int Id, 
         string Description, 
         DateOnly Date, 
-        TimeOnly? Start, 
+        TimeOnly Start, 
         TimeOnly? End
     )
     {
+        public decimal Duration => 
+            (Convert.ToDecimal((End.HasValue ? new TimeOnly(End.Value.Ticks - Start.Ticks) : new TimeOnly())
+            .ToTimeSpan()
+            .TotalMinutes) / 60m);
 
     }
 
@@ -48,7 +53,7 @@ public partial class TimePage
                         t.Oid,
                         t.Description ?? "",
                         t.Date,
-                        t.TimeFrom,
+                        t.TimeFrom ?? TimeOnly.MinValue,
                         t.TimeTo
                     )
                 ).ToList();

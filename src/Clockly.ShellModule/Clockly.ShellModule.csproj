@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Humanizer" />
     <PackageReference Include="Microsoft.Data.Sqlite" />
     <PackageReference Include="Vertiq.Templates.MudBlazor" />
     <PackageReference Include="Vertiq.DB.Xpo" />
