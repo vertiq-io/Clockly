@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bullseye" Version="4.0.0" />
+    <PackageReference Include="SimpleExec" Version="11.0.0" />
+    <PackageReference Include="Spectre.Console" Version="0.47.0" />
+	  <PackageReference Include="Xenial.Beer" Version="0.1.0" />
+    <PackageReference Include="CliWrap" Version="3.5.0" />
+    <PackageReference Remove="MinVer" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Using Static="true" Include="Bullseye.Targets" />
+	  <Using Static="true" Include="SimpleExec.Command" />
+	  <Using Static="true" Include="Xenial.Delicious.Beer.Recipes.IISRecipe" />
+	  <Using Include="System.Runtime.InteropServices" />
+	  <Using Include="Xenial.Delicious.Beer.Recipes" />
+	  <Using Include="Xenial.Delicious.Beer.Json" />
+    <Using Include="CliWrap" />
+    <Using Include="CliWrap.EventStream" />
+    <Using Include="Spectre.Console" />
+  </ItemGroup>
+
+</Project>

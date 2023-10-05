@@ -1,0 +1,19 @@
+@page "/"
+@inject IApplication Application
+@namespace Clockly.Shared
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_VertiqLayout";
+}
+
+@if (Application.ConfigurationOptions.ShellOptions.HybridType == Vertiq.Shells.ShellType.ServerSide)
+{
+    <component type="typeof(VertiqApplicationShell)" render-mode="ServerPrerendered" />
+}
+else if (Application.ConfigurationOptions.ShellOptions.HybridType == Vertiq.Shells.ShellType.WebAssembly)
+{
+    <div id="app">
+        <component type="typeof(DefaultLoader)" render-mode="Static" />
+    </div>
+}

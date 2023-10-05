@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C8FB84A6-70A3-43C2-B8D5-FAF6B44B681B}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+		src\Directory.Packages.props = src\Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clockly.Server", "src\Clockly.Server\Clockly.Server.csproj", "{734743A9-8F59-4330-887D-D531E368965D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clockly.ShellModule", "src\Clockly.ShellModule\Clockly.ShellModule.csproj", "{1EA353BA-1C14-4446-8E62-22B666DA7E99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{B5EC91F6-D40B-4FDD-8A90-FB5A2C65F80E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B15FDD89-8F62-4B82-BC15-BB92FA462D50}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		b.bat = b.bat
+		build.bat = build.bat
+		build.ps1 = build.ps1
+		build.sh = build.sh
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		nuget.config = nuget.config
+		refreshenv.bat = refreshenv.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{B8EA6988-1DFC-4097-9645-514F8A23E3CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{E9D501CA-A2B4-463B-B3DD-509961EF55C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "build", "build\build\build.csproj", "{B19099A6-8D11-4D8E-8AA6-236E52B90907}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{734743A9-8F59-4330-887D-D531E368965D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{734743A9-8F59-4330-887D-D531E368965D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{734743A9-8F59-4330-887D-D531E368965D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{734743A9-8F59-4330-887D-D531E368965D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EA353BA-1C14-4446-8E62-22B666DA7E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA353BA-1C14-4446-8E62-22B666DA7E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA353BA-1C14-4446-8E62-22B666DA7E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA353BA-1C14-4446-8E62-22B666DA7E99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B19099A6-8D11-4D8E-8AA6-236E52B90907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19099A6-8D11-4D8E-8AA6-236E52B90907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19099A6-8D11-4D8E-8AA6-236E52B90907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19099A6-8D11-4D8E-8AA6-236E52B90907}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{734743A9-8F59-4330-887D-D531E368965D} = {B8EA6988-1DFC-4097-9645-514F8A23E3CF}
+		{1EA353BA-1C14-4446-8E62-22B666DA7E99} = {B8EA6988-1DFC-4097-9645-514F8A23E3CF}
+		{B8EA6988-1DFC-4097-9645-514F8A23E3CF} = {C8FB84A6-70A3-43C2-B8D5-FAF6B44B681B}
+		{E9D501CA-A2B4-463B-B3DD-509961EF55C6} = {C8FB84A6-70A3-43C2-B8D5-FAF6B44B681B}
+		{B19099A6-8D11-4D8E-8AA6-236E52B90907} = {B5EC91F6-D40B-4FDD-8A90-FB5A2C65F80E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B0903E6-5636-46D7-9092-8EE45A7B004F}
+	EndGlobalSection
+EndGlobal

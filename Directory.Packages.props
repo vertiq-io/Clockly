@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Project>
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <VertiqVersion>5.0.0</VertiqVersion>
+    <!-- <XenialIdentityVersion>0.0.51</XenialIdentityVersion> -->
+    <!-- <DxVersion>22.1.5</DxVersion> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Vertiq.Core" Version="$(VertiqVersion)" />
+    <PackageVersion Include="Vertiq.Components" Version="$(VertiqVersion)" />
+    <!-- <PackageVersion Include="Vertiq.DB.Xpo" Version="$(VertiqVersion)" />
+    <PackageVersion Include="Vertiq.Hosting.BlazorServer" Version="$(VertiqVersion)" />
+    <PackageVersion Include="Vertiq.Hosting.BlazorServerSecurity" Version="$(VertiqVersion)" />
+    <PackageVersion Include="Vertiq.Modules.AppModule" Version="$(VertiqVersion)" />
+    <PackageVersion Include="Vertiq.Features.Fluxor" Version="$(VertiqVersion)" />
+    <PackageVersion Include="Vertiq.Features.Fluxor.Conventions" Version="$(VertiqVersion)" />-->
+
+    <!-- Hosting -->
+    <PackageVersion Include="Vertiq.Hosting.BlazorServer" Version="$(VertiqVersion)" />
+
+    <!-- Template -->
+    <PackageVersion Include="Vertiq.Templates.MudBlazor" Version="$(VertiqVersion)" />
+
+    <!-- Security -->
+    <PackageVersion Include="Vertiq.Hosting.BlazorServerSecurity" Version="$(VertiqVersion)" />
+
+    <!-- Transport -->
+    <PackageVersion Include="Vertiq.Transport.Http.Client" Version="$(VertiqVersion)" />
+    <PackageVersion Include="Vertiq.Transport.Http.Server" Version="$(VertiqVersion)" />
+
+    <!-- Serialization -->
+    <PackageVersion Include="Vertiq.Serialization.Newtonsoft.Json" Version="$(VertiqVersion)" />
+
+    <!-- Additional Modules -->
+    <PackageVersion Include="Vertiq.Modules.DiagnosticModule" Version="$(VertiqVersion)" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="MinVer" Version="4.2.0" />
+  </ItemGroup>
+
+</Project>

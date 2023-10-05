@@ -1,0 +1,26 @@
+<Project>
+
+  <PropertyGroup>
+    <RootNamespace>Clockly</RootNamespace>
+    <Product>Clockly</Product>
+    <!-- <MinVerTagPrefix>v</MinVerTagPrefix> -->
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- Fix the Hot Reload issue -->
+    <AssemblyVersion Condition="'$(Configuration)' == 'Debug'">1.0.0.0</AssemblyVersion>
+
+    <!-- Don't warn about multiple package sources -->
+    <NoWarn>NU1507;$(NoWarn)</NoWarn>
+
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="MinVer">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
