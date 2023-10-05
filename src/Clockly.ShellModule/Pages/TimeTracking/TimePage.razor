@@ -46,18 +46,39 @@
             </EmptyTemplate>
             <ChildContent>
                 <VTR>
-                    <VTD>@context.Date.ToShortDateString()</VTD>
-                    <VTD>@context.Start</VTD>
-                    <VTD>@context.End</VTD>
-                    <VTD>
-                        @(string.Format("{0:N2}h", context.Duration))
-                    </VTD>
-                    <VTD Style="width: 100%!important">@context.Description</VTD>
-                    <VTD>
-                        <VIconButton Icon="@MdiIcons.TrashCan"
-                                     Color="VColor.Error"
-                                     Dispatcher="() => new DeleteRequest(context.Id)">Delete</VIconButton>
-                    </VTD>
+                    <VIf Value="@context.EditMode">
+                        <True>
+                            <VTD colspan="6">
+                                <VDetailView Model="@context" TModel="TimeEntry" DispatcherOnSubmit="m => new SaveRequest(m)">
+                                    <VStackLayout Orientation="VOrientation.Horizontal" Gap="1">
+                                        <VEditor For="m => m.Date" />
+                                        <VEditor For="m => m.Start" />
+                                        <VEditor For="m => m.End" />
+                                        <VEditor For="m => m.Description" />
+                                    </VStackLayout>
+                                    <VButton Color="VColor.Tertiary" Dispatch="new FetchRequest()">Abort</VButton>
+                                    <VSubmit />
+                                </VDetailView>
+                            </VTD>
+                        </True>
+                        <False>
+                            <VTD>@context.Date.ToShortDateString()</VTD>
+                            <VTD>@context.Start</VTD>
+                            <VTD>@context.End</VTD>
+                            <VTD>
+                                @(string.Format("{0:N2}h", context.Duration))
+                            </VTD>
+                            <VTD Style="width: 100%!important">@context.Description</VTD>
+                            <VTD>
+                                <VIconButton Icon="@MdiIcons.TrashCan"
+                                             Color="VColor.Error"
+                                             Dispatcher="() => new DeleteRequest(context.Id)">Delete</VIconButton>
+                                <VIconButton Icon="@MdiIcons.Pencil"
+                                             Color="VColor.Primary"
+                                             Dispatcher="() => new EditModeRequest(State.Value.Data, context)">Edit</VIconButton>
+                            </VTD>
+                        </False>
+                    </VIf>
                 </VTR>
             </ChildContent>
         </VForEach>
