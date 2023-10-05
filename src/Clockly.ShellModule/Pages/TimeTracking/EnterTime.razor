@@ -7,9 +7,21 @@
 
 @inject IState<MediatorState<AddTimeViewModel>> State
 
-<VDetailView Model="@State.Value.Data" DispatcherOnSubmit="v => new AddRequest(v)">
-    <VEditor For="m => m.Description" />
-    <VEditor For="m => m.From" MinuteSelectionStep="@(15)" />
-    <VEditor For="m => m.To" MinuteSelectionStep="@(15)" />
-    <VSubmit />
-</VDetailView>
+<VIf Value="@State.Value.IsLoading">
+    <True>
+        <DefaultLoader />
+    </True>
+    <False>
+        <VDetailView Model="@State.Value.Data" DispatcherOnSubmit="v => new AddRequest(v)" StateHasChangedCallback="@StateHasChanged">
+            <VEditor For="m => m.Description" />
+            <VEditor For="m => m.From" MinuteSelectionStep="@(15)" />
+            <VEditor For="m => m.To" MinuteSelectionStep="@(15)" />
+            <VSubmit />
+        </VDetailView>
+    </False>
+</VIf>
+
+
+<VDiv>
+    @State.Value.Data.Description
+</VDiv>

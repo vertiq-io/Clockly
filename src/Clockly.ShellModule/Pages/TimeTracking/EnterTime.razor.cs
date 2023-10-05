@@ -25,7 +25,10 @@ public partial class EnterTime
         {
             public override async ValueTask<Response<AddTimeViewModel>> Handle(AddRequest request, CancellationToken cancellationToken)
             {
+                //HACK:
+                //We yield to give the UI time to trigger state changes
                 await Task.Yield();
+
 
                 var vm = request.ViewModel with
                 {
