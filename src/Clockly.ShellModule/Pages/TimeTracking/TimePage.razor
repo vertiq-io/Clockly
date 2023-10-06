@@ -2,10 +2,12 @@
 @using Fluxor.Blazor.Web.Components;
 @using Fluxor;
 @using Humanizer;
+@using Microsoft.AspNetCore.Authorization;
 @using Vertiq.Icons;
 @using Vertiq.Stores;
 @inject IState<MediatorState<TimeViewModel>> State
 @inherits FluxorComponent
+@attribute [Authorize]
 
 <VDispatchOnce Dispatch="new FetchRequest(State.Value.Data)" />
 <style>

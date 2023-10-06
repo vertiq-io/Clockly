@@ -3,9 +3,11 @@
 
 @using Fluxor;
 @using Fluxor.Blazor.Web.Components;
+@using Microsoft.AspNetCore.Authorization;
 @using Vertiq.Stores;
 
 @inject IState<MediatorState<AddTimeViewModel>> State
+@attribute [Authorize]
 
 @* HACK: We currently need to unmount and mount the DetailView caused by #40 *@
 @* Otherwise the new server state will not be bound correctly *@
