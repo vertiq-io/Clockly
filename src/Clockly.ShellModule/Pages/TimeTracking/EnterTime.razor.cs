@@ -4,6 +4,8 @@ using Clockly.Models;
 using Fluxor;
 using Vertiq.Actions;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Http;
+using Clockly.Services;
 
 namespace Clockly.Pages.TimeTracking;
 
@@ -21,7 +23,7 @@ public partial class EnterTime
 
     public sealed record AddRequest(AddTimeViewModel ViewModel) : Request<AddTimeViewModel>
     {
-        public sealed record Handler(IUnitOfWorkFactory UnitOfWorkFactory) : RequestHandler<AddRequest, AddTimeViewModel>
+        public sealed record Handler(IUnitOfWorkFactory UnitOfWorkFactory, ICurrentUserService CurrentUserService) : RequestHandler<AddRequest, AddTimeViewModel>
         {
             public override async ValueTask<Response<AddTimeViewModel>> Handle(AddRequest request, CancellationToken cancellationToken)
             {
@@ -40,6 +42,7 @@ public partial class EnterTime
 
                 var timeEntry = new CTimeEntry(uow)
                 {
+                    UserId = (await CurrentUserService.GetUserId()) ?? "",
                     Description = vm.Description,
                     Date = vm.Date,
                     TimeFrom = vm.From,

@@ -1,3 +1,5 @@
+using Clockly.Services;
+
 namespace Clockly;
 
 [DependsOn(typeof(ClocklyShellModule))]
@@ -9,5 +11,9 @@ namespace Clockly;
 [DependsOn(typeof(VertiqXpoSchemaUpdateModule))]
 public sealed record ClocklyServerModule : ModuleBase
 {
-    
+    public override void ConfigureServices(IApplication application, IServiceCollection services)
+    {
+        base.ConfigureServices(application, services);
+        services.AddTransient<ICurrentUserService, CurrentUserService>();
+    }
 }
